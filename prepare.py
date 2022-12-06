@@ -8,6 +8,7 @@ def acquire_and_prep_sales():
     df = df.set_index('sale_date').sort_index()
     df['month'] = df.index.month_name()
     df['day_of_week'] = df.index.day_name()
+    df['sales_total'] = df.sale_amount * df.item_price
     
     return df
 
