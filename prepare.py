@@ -17,5 +17,6 @@ def acquire_and_prep_ops():
     df = df.set_index('Date').sort_index()
     df['Year'] = df.index.year
     df['Month'] = df.index.month_name()
-    
+    df = df.fillna(0) 
+
     return df
